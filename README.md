@@ -1,4 +1,10 @@
-# computer-graphics-homework
+---
+documentclass: ctexart
+CJKmainfont: WenQuanYi Micro Hei
+title: Last Homework for Computer Graphics
+author: wzy
+institute: USTC
+---
 
 ## 三次书面作业
 
@@ -89,7 +95,7 @@ argument:
     reality     sample_number,r_aperture
 ```
 
-### TLDR
+### 参数修改
 
 - `./cg.py -c255,0,0 -a0,0,50,100,100,30 line` 可以画出一条从 (0, 0)
 到 (50, 100) 再到 (100, 30) 的红色直线。其余 10 个命令类似。
@@ -99,9 +105,9 @@ argument:
 - 默认参数可通过 `-v` 查看。
 - `-n` 可以不打开窗口。
 
-### NOTE
+### 注意事项
 
-直线允许有 16 种情况： （我可没有写 16 个`if, else`）
+直线允许有 16 种情况（没有使用 16 个条件判断，那样的实现太脏了）：
 
 ![16line](images/16line.png "16 种直线")
 
@@ -116,12 +122,74 @@ argument:
 
 - OS: linux 5.14.7
 - opengl: mesa 21.2.2-1
-- python 3.9.7
-- taichi 0.7.32
+- python: 3.9.7
+- taichi: 0.7.32
+
+注意 taichi 还在开发中，API 经常变动，如不能复现本代码，请使用完全相同的版本重
+新尝试。
+
+### 代码结构
+
+```
+.
+├── 1.md // 前 3 次作业的 markdown 文件
+├── 2.md
+├── 3.md
+├── cg.py // 主程序
+├── generate_images.bash // 运行此程序可以生成本文中出现的所有图片
+├── images // 本文中出现的所有图片
+│   ├── 16line.png
+│   ├── bezier.png
+│   ├── b.png
+│   ├── circle.png
+│   ├── ellipse.png
+│   ├── fern.png
+│   ├── fill.png
+│   ├── julia.png
+│   ├── koch.png
+│   ├── line.png
+│   ├── mandelbrot.png
+│   └── reality.png
+├── LICENSE
+├── README.md // 本文
+├── README.pdf // 本文编译后的 pdf 文件
+└── utils // 所有算法的演示，名字与算法的对应关系见 `./cg.py --help` 的输出
+    ├── bezier.py
+    ├── b.py
+    ├── circle
+    │   ├── bresenham.py
+    │   ├── __init__.py
+    │   └── midpoint.py
+    ├── ellipse.py
+    ├── fern.py
+    ├── fill
+    │   ├── __init__.py
+    │   ├── scan.py
+    │   └── seed.py
+    ├── __init__.py
+    ├── julia.py
+    ├── koch.py
+    ├── line
+    │   ├── bresenham.py
+    │   ├── __init__.py
+    │   └── midpoint.py
+    ├── mandelbrot.py
+    └── reality.py
+
+5 directories, 38 files
+```
+
+主程序只负责命令行选项的读取和 GUI 窗口的初始化，实际会调用 `utils` 下各个子模
+块的 `paint()`{.py} 完成绘制。 `paint()`{.py} 实现算法，最终会调用
+`setpixel()`{.py}, `set8pixel()`{.py}, `set4pixel()`{.py} 等函数。
+
+参考的来源均在注释中标出，例如 wikipedia 和某些博客中 C 或 python 的代码。
 
 ---
 
-生成的图形包括：
+以下生成的图形均是在默认参数下生成的，比如 `./cg.py line`{.sh} 如果想修改参数看
+[参数修改](#参数修改)，修改某些参数需要注意，比如雪花曲线的参数中迭代次数不要太
+大等等。
 
 ### 图元的生成：
 
