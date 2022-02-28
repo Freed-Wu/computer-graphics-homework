@@ -1,6 +1,8 @@
 """Computer graphics algorithms demonstration."""
 import taichi as ti
+from typing import Final
 
+VERSION: Final = "0.0.1"
 pixels = ti.Vector.field(3, float)
 
 

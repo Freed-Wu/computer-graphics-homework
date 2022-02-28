@@ -2,7 +2,7 @@
 # Docstring {{{ #
 """Computer graphics algorithms demonstration.
 
-usage: cg.py [-hVdns] [ [-v] | [-q|-qq] ] [-x <height>] [-y <width>] [-o <out>]
+usage: cgdemo [-hVdns] [ [-v] | [-q|-qq] ] [-x <height>] [-y <width>] [-o <out>]
     [-c <color>] [-a <args>] [-t <time>] <command>
 
 options:
@@ -70,14 +70,36 @@ argument:
     reality     sample_number,r_aperture
 """
 # }}} Docs #
-if __name__ == "__main__" and __doc__:
+from typing import Optional, Dict, Union
+from pprint import pformat
+import logging
+from docopt import docopt
+# from . import VERSION
+VERSION = "0.0.1"
+
+Arg = Optional[Union[bool, int, str]]
+logger = logging.getLogger(__name__)
+
+
+def main(doc: str = __doc__):  # type: ignore
+    """Run main function."""
+    try:
+        args: Dict[str, Arg] = docopt(doc, version=VERSION)
+    except Exception:
+        args = {}
+    if args.get("--debug"):
+        try:
+            from rich.logging import RichHandler
+
+            logging.basicConfig(
+                level="DEBUG",
+                format="%(message)s",
+                handlers=[RichHandler(rich_tracebacks=True, markup=True)],
+            )
+        except ImportError:
+            logging.basicConfig(level="DEBUG")
+    logger.debug(pformat(args))
     # Parse {{{ #
-    from docopt import docopt
-    from typing import Optional, Dict, Union
-
-    Arg = Optional[Union[bool, int, str]]
-    args: Dict[str, Arg] = docopt(__doc__, version="v0.0.1")
-
     import os
     import taichi as ti
 
@@ -105,46 +127,46 @@ if __name__ == "__main__" and __doc__:
 
     # pixels and paint must be defined in a same file
     if args["<command>"] in ["line"]:
-        from utils import init, pixels
+        from . import init, pixels
 
         if args["--second"]:
-            from utils.line.bresenham import paint
+            from .line.bresenham import paint
         else:
-            from utils.line.midpoint import paint
+            from .line.midpoint import paint
         argv = argv if argv else [100, 5, 3, 3]
     elif args["<command>"] in ["circle"]:
-        from utils import init, pixels
+        from . import init, pixels
 
         if args["--second"]:
-            from utils.circle.bresenham import paint
+            from .circle.bresenham import paint
         else:
-            from utils.circle.midpoint import paint
+            from .circle.midpoint import paint
         argv = argv if argv else [100, 50, 25]
     elif args["<command>"] in ["ellipse"]:
-        from utils import init, pixels
-        from utils.ellipse import paint
+        from . import init, pixels
+        from .ellipse import paint
 
         argv = argv if argv else [100, 50, 30, 10]
     elif args["<command>"] in ["fill"]:
-        from utils import init, pixels
+        from . import init, pixels
 
         if args["--second"]:
-            from utils.fill.seed import paint
+            from .fill.seed import paint
 
             argv = argv if argv else [50, 30, 0, 0, 100, 50, 25, 100]
         else:
-            from utils.fill.scan import paint
+            from .fill.scan import paint
 
             argv = argv if argv else [0, 0, 100, 50, 50, 30, 25, 100]
 
     elif args["<command>"] in ["bezier"]:
-        from utils import init, pixels
-        from utils.bezier import paint
+        from . import init, pixels
+        from .bezier import paint
 
         argv = argv if argv else [100, 0, 0, 30, 300, 300, 300]
     elif args["<command>"] in ["b"]:
-        from utils import init, pixels
-        from utils.b import paint
+        from . import init, pixels
+        from .b import paint
 
         argv = (
             argv
@@ -170,28 +192,28 @@ if __name__ == "__main__" and __doc__:
             ]
         )
     elif args["<command>"] in ["koch"]:
-        from utils import init, pixels
-        from utils.koch import paint
+        from . import init, pixels
+        from .koch import paint
 
         argv = argv if argv else [4, 5, 0, 0]
     elif args["<command>"] in ["mandelbrot"]:
-        from utils import init, pixels
-        from utils.mandelbrot import paint
+        from . import init, pixels
+        from .mandelbrot import paint
 
         argv = argv if argv else [2, 20]
     elif args["<command>"] in ["julia"]:
-        from utils import init, pixels
-        from utils.julia import paint
+        from . import init, pixels
+        from .julia import paint
 
         argv = argv if argv else [2, 20]
     elif args["<command>"] in ["fern"]:
-        from utils import init, pixels
-        from utils.fern import paint
+        from . import init, pixels
+        from .fern import paint
 
         argv = argv if argv else [50, 2000, 512, 0]
     elif args["<command>"] in ["reality"]:
-        from utils import pixels
-        from utils.reality import paint, init, spheres
+        from . import pixels
+        from .reality import paint, init, spheres
 
         ti.root.dense(ti.i, 20).place(spheres)
         argv = argv if argv else [4, 0.05]
@@ -223,6 +245,7 @@ if __name__ == "__main__" and __doc__:
     init()
     gui = ti.GUI(args["<command>"], shape)
     import time
+
     timeout = float(args["--timeout"])  # type: ignore
     start = time.time()
     while time.time() - start < timeout and gui.running:
@@ -233,7 +256,7 @@ if __name__ == "__main__" and __doc__:
         if ext in ["mp4", "gif"]:
             video_manager.write_frame(pixels)  # type: ignore
         elif ext in ["png", "jpg", "bmp"]:
-            i += 1
+            i += 1  # type: ignore
             try:
                 file = out % i
             except TypeError:
@@ -244,4 +267,8 @@ if __name__ == "__main__" and __doc__:
         video_manager.make_video(gif=False)  # type: ignore
     if ext == "gif":
         video_manager.make_video(mp4=False)  # type: ignore
+
+
+if __name__ == "__main__" and __doc__:
+    main(__doc__)
 # ex: foldmethod=marker
