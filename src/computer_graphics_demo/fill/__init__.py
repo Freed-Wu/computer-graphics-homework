@@ -1,6 +1,8 @@
 """
-Fill a region
-=============
+computer_graphics_demo.fill
+===========================
+
+Fill a region.
 """
 import copy
 

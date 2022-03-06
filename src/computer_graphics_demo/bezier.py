@@ -1,6 +1,8 @@
 """
-Draw a Bezier curve
-===================
+computer_graphics_demo.bezier
+=============================
+
+Draw a Bezier curve.
 """
 import taichi as ti
 from .line import polygon

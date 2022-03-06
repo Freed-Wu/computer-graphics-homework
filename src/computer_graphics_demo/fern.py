@@ -1,6 +1,8 @@
 """
-Draw a fern
-===========
+computer_graphics_demo.fern
+===========================
+
+Draw a fern.
 """
 import taichi as ti
 import numpy as np

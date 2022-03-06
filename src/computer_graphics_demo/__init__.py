@@ -1,6 +1,8 @@
 """
-Common Functions
-================
+computer_graphics_demo
+======================
+
+Common functions.
 """
 import taichi as ti
 from typing import Final

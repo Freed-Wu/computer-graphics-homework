@@ -1,6 +1,8 @@
 """
-Draw a Julia set
-================
+computer_graphics_demo.julia
+============================
+
+Draw a Julia set.
 """
 import taichi as ti
 from . import pixels, setpixel

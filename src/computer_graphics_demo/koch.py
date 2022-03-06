@@ -1,6 +1,8 @@
 """
+computer_graphics_demo.koch
+===========================
+
 Draw a Koch curve
-=================
 """
 import math
 from .line.bresenham import line

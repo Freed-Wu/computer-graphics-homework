@@ -1,6 +1,8 @@
 """
-Scan Line Algorithm
-===================
+computer_graphics_demo.fill.scan
+================================
+
+Scan line algorithm.
 """
 import taichi as ti
 from typing import List, Tuple, Optional

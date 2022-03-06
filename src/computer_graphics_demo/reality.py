@@ -1,6 +1,8 @@
 """
-Draw a scene by hidden surface removal, mirror reflection, texture, etc
-=======================================================================
+computer_graphics_demo.reality
+==============================
+
+Draw a scene by hidden surface removal, mirror reflection, texture, etc.
 """
 import taichi as ti
 import numpy as np
