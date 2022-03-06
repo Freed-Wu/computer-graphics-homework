@@ -1,6 +1,8 @@
 """
-Midpoint Algorithm
-==================
+computer_graphics_demo.circle.midpoint
+======================================
+
+Midpoint algorithm.
 """
 import taichi as ti
 from . import set8pixel

@@ -1,6 +1,8 @@
 """
-Midpoint Algorithm
-==================
+computer_graphics_demo.line.midpoint
+====================================
+
+Midpoint algorithm.
 """
 import taichi as ti
 from .. import setpixel

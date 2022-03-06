@@ -17,6 +17,8 @@ institute: USTC
 
 30 分；算法任选，不可调用已有函数（画点函数除外），提交可执行程序和实验报告。
 
+文档见 <https://computer-graphics-demo.readthedocs.io> 。
+
 ```shell
 $ pip install computer-graphics-demo
 $ cgdemo --help

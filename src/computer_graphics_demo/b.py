@@ -1,6 +1,8 @@
 """
-Draw a B-spline
-===============
+computer_graphics_demo.b
+========================
+
+Draw a B-spline.
 """
 import taichi as ti
 from .line import polygon

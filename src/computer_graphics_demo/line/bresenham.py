@@ -1,6 +1,8 @@
 """
-Bresenham Algorithm
-===================
+computer_graphics_demo.line.bresenham
+=====================================
+
+Bresenham algorithm.
 """
 import taichi as ti
 from .. import setpixel

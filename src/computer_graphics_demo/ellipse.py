@@ -1,6 +1,8 @@
 """
-Draw a ellipse
-==============
+computer_graphics_demo.ellipse
+==============================
+
+Draw a ellipse.
 """
 import taichi as ti
 from .circle import set4pixel

@@ -1,6 +1,8 @@
 """
-Seed Point Algorithm
-====================
+computer_graphics_demo.fill.seed
+================================
+
+Seed point algorithm.
 """
 from ..line import polygon
 from ..line.bresenham import line

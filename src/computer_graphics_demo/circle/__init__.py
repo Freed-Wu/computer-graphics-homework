@@ -1,6 +1,8 @@
 """
-Draw a circle
-=============
+computer_graphics_demo.circle
+=============================
+
+Draw a circle.
 """
 from .. import setpixel
 

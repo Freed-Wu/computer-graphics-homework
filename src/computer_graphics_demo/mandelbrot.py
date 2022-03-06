@@ -1,6 +1,8 @@
 """
+computer_graphics_demo.mandelbrot
+=================================
+
 Draw a Mandelbrot set
-=====================
 """
 import taichi as ti
 from . import pixels, setpixel
