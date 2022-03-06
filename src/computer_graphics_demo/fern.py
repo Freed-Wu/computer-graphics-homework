@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a fern
+===========
+"""
 import taichi as ti
 import numpy as np
 from . import setpixel

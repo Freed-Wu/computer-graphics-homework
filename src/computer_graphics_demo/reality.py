@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a scene by hidden surface removal, mirror reflection, texture, etc
+=======================================================================
+"""
 import taichi as ti
 import numpy as np
 import math

@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Common Functions
+================
+"""
 import taichi as ti
 from typing import Final
 

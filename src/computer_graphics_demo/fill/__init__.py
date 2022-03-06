@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Fill a region
+=============
+"""
 import copy
 
 

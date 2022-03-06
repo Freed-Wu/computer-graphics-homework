@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Scan Line Algorithm
+===================
+"""
 import taichi as ti
 from typing import List, Tuple, Optional
 from .. import setpixel

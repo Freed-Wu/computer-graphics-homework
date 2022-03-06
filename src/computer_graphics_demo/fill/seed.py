@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Seed Point Algorithm
+====================
+"""
 from ..line import polygon
 from ..line.bresenham import line
 from .. import pixels, setpixel

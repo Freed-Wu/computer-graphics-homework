@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Bresenham Algorithm
+===================
+"""
 import taichi as ti
 from . import set8pixel
 

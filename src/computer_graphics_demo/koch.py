@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a Koch curve
+=================
+"""
 import math
 from .line.bresenham import line
 

@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a Julia set
+================
+"""
 import taichi as ti
 from . import pixels, setpixel
 

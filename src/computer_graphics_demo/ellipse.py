@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a ellipse
+==============
+"""
 import taichi as ti
 from .circle import set4pixel
 
