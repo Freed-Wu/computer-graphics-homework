@@ -133,7 +133,12 @@ $ exa -T
 ├── 1.md // 前 3 次作业的 markdown 文件
 ├── 2.md
 ├── 3.md
-├── generate_images.bash // 运行此程序可以生成本文中出现的所有图片
+├── docs
+│  ├── api.rst
+│  ├── conf.py
+│  ├── index.rst
+│  ├── make.bat
+│  └── Makefile
 ├── images // 本文中出现的所有图片
 │  ├── 16line.png
 │  ├── b.png
@@ -150,6 +155,9 @@ $ exa -T
 ├── LICENSE
 ├── pyproject.toml
 ├── README.md // 本文
+├── requirements.txt
+├── scripts
+│  └── generate_images.sh // 运行此程序可以生成本文中出现的所有图片
 ├── setup.py
 └── src // 所有算法的演示，名字与算法的对应关系见 `cgdemo --help` 的输出
    └── computer_graphics_demo

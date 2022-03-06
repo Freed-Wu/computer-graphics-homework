@@ -19,6 +19,11 @@ try:
 except StopIteration:
     long_description = ""
     long_description_content_type = None
+REQUIREMENTS: Final = (here / 'requirements.txt')
+try:
+    install_requires = REQUIREMENTS.read_text().splitlines()
+except FileNotFoundError:
+    install_requires = []
 NAME: Final = "computer-graphics-demo"
 VCS_URL: Final = "https://github.com/Freed-Wu/computer-graphics-homework"
 VERSION: Final = "0.0.1"
@@ -56,7 +61,7 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     python_requires=">=3.6",
-    install_requires=["docopt", "taichi>=0.7, <0.8"],
+    install_requires=install_requires,
     extras_require={
         "debug": ["rich"],
     },
