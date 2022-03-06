@@ -56,7 +56,7 @@ setup(
     package_dir={"": "src"},
     include_package_data=True,
     python_requires=">=3.6",
-    install_requires=["docopt", "taichi>=0.7, <0.8", "numpy"],
+    install_requires=["docopt", "taichi>=0.7, <0.8"],
     extras_require={
         "debug": ["rich"],
     },

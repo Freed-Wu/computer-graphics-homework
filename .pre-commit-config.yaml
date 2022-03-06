@@ -81,7 +81,3 @@ repos:
     rev: v1.1.217
     hooks:
       - id: pyright
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.1.1
-    hooks:
-      - id: pydocstyle

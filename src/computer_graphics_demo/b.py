@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a B-spline
+===============
+"""
 import taichi as ti
 from .line import polygon
 from .line.bresenham import line

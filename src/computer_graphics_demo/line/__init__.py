@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a line
+===========
+"""
 from ..fill import cycle_shift
 from .. import setpixel
 from typing import Callable, Optional

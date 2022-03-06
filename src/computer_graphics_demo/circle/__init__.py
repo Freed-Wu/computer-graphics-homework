@@ -1,4 +1,7 @@
-"""Computer graphics algorithms demonstration."""
+"""
+Draw a circle
+=============
+"""
 from .. import setpixel
 
 
