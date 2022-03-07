@@ -74,8 +74,7 @@ from typing import Optional, Dict, Union
 from pprint import pformat
 import logging
 from docopt import docopt
-# from . import VERSION
-VERSION = "0.0.1"
+from . import VERSION
 
 Arg = Optional[Union[bool, int, str]]
 logger = logging.getLogger(__name__)

@@ -15,6 +15,9 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, os.path.abspath("../src"))
+# pyright:reportMissingImports=false
+from computer_graphics_demo import VERSION
+
 try:
     readme = next(iter(Path("..").glob("README*")))
     Path(readme.name).write_text(
@@ -30,7 +33,7 @@ copyright = "2022, Wu Zhenyu"
 author = "Wu Zhenyu"
 
 # The full version, including alpha/beta/rc tags
-release = "0.0.1"
+release = VERSION
 
 
 # -- General configuration ---------------------------------------------------

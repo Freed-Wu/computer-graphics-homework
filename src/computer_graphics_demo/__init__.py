@@ -7,7 +7,7 @@ Common functions.
 import taichi as ti
 from typing import Final
 
-VERSION: Final = "0.0.1"
+VERSION: Final = "0.0.2"
 pixels = ti.Vector.field(3, float)
 
 
