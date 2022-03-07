@@ -26,7 +26,8 @@ except FileNotFoundError:
     install_requires = []
 NAME: Final = "computer-graphics-demo"
 VCS_URL: Final = "https://github.com/Freed-Wu/computer-graphics-homework"
-VERSION: Final = "0.0.1"
+# NOT from computer_graphics_demo import VERSION to avoid adding dependencies
+VERSION: Final = "0.0.2"
 
 setup(
     name=NAME,

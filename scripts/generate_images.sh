@@ -1,5 +1,5 @@
 #! /usr/bin/env bash
-#? v0.0.1
+#? 0.0.1
 ##? Generate images of README.md.
 ##?
 ##? usage: generate_images.bash [options]
