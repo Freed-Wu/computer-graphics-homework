@@ -2,8 +2,8 @@
 # Docstring {{{ #
 """Computer graphics algorithms demonstration.
 
-usage: cgdemo [-hVdns] [ [-v] | [-q|-qq] ] [-x <height>] [-y <width>] [-o <out>]
-    [-c <color>] [-a <args>] [-t <time>] <command>
+usage: {binname} [-hVdns] [ [-v] | [-q|-qq] ] [-x <height>] [-y <width>]
+    [-o <out>] [-c <color>] [-a <args>] [-t <time>] <command>
 
 options:
     -h, --help              Show this screen.
@@ -70,17 +70,18 @@ argument:
     reality     sample_number,r_aperture
 """
 # }}} Docs #
-from typing import Optional, Dict, Union
+from typing import Optional, Dict, Union, Final
 from pprint import pformat
 import logging
 from docopt import docopt
-from . import VERSION
+from . import __version__ as VERSION, _binname as BINNAME
 
+_doc: Final = __doc__.format(binname=BINNAME)  # type: ignore
 Arg = Optional[Union[bool, int, str]]
 logger = logging.getLogger(__name__)
 
 
-def main(doc: str = __doc__):  # type: ignore
+def main(doc: str = _doc):
     """Run main function."""
     try:
         args: Dict[str, Arg] = docopt(doc, version=VERSION)
@@ -268,6 +269,6 @@ def main(doc: str = __doc__):  # type: ignore
         video_manager.make_video(mp4=False)  # type: ignore
 
 
-if __name__ == "__main__" and __doc__:
-    main(__doc__)
+if __name__ == "__main__":
+    main(_doc)
 # ex: foldmethod=marker

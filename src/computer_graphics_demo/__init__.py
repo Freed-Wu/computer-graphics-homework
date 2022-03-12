@@ -7,7 +7,8 @@ Common functions.
 import taichi as ti
 from typing import Final
 
-VERSION: Final = "0.0.2"
+__version__: Final = "0.0.2"
+_binname: Final = "cgdemo"
 pixels = ti.Vector.field(3, float)
 
 

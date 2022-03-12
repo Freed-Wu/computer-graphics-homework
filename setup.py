@@ -19,15 +19,17 @@ try:
 except StopIteration:
     long_description = ""
     long_description_content_type = None
-REQUIREMENTS: Final = (here / 'requirements.txt')
+REQUIREMENTS: Final = here / "requirements.txt"
 try:
     install_requires = REQUIREMENTS.read_text().splitlines()
 except FileNotFoundError:
     install_requires = []
-NAME: Final = "computer-graphics-demo"
-VCS_URL: Final = "https://github.com/Freed-Wu/computer-graphics-homework"
-# NOT from computer_graphics_demo import VERSION to avoid adding dependencies
+# NOT from computer_graphics_demo import anything to avoid adding dependencies
 VERSION: Final = "0.0.2"
+BINNAME: Final = "cgdemo"
+NAME_: Final = "computer_graphics_demo"
+NAME: Final = NAME_.replace("_", "-")
+VCS_URL: Final = "https://github.com/Freed-Wu/computer-graphics-homework"
 
 setup(
     name=NAME,
@@ -68,7 +70,7 @@ setup(
     },
     entry_points={
         "console_scripts": [
-            "cgdemo=computer_graphics_demo.__main__:main",
+            f"{BINNAME}={NAME_}.__main__:main",
         ],
     },
     keywords="python computer graphics",
