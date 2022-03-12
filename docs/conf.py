@@ -16,7 +16,7 @@ from pathlib import Path
 
 sys.path.insert(0, os.path.abspath("../src"))
 # pyright:reportMissingImports=false
-from computer_graphics_demo import VERSION
+from computer_graphics_demo import __version__ as VERSION  # noqa: E402
 
 try:
     readme = next(iter(Path("..").glob("README*")))
