@@ -1,9 +1,43 @@
 ---
 documentclass: ctexart
 title: Last Homework for Computer Graphics
-author: wzy
+author: Wu Zhenyu (SA21006096)
 institute: USTC
 ---
+
+[![github/license](https://shields.io/github/license/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/blob/master/LICENSE)
+[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/computer-graphics-homework/Upload%20Python%20Package)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
+[![readthedocs](https://shields.io/readthedocs/computer-graphics-demo)](https://computer-graphics-demo.readthedocs.io)
+
+[![github/downloads](https://shields.io/github/downloads/Freed-Wu/computer-graphics-homework/total)](https://github.com/Freed-Wu/computer-graphics-homework/releases)
+[![github/downloads/latest](https://shields.io/github/downloads/Freed-Wu/computer-graphics-homework/latest/total)](https://github.com/Freed-Wu/computer-graphics-homework/releases/latest)
+[![github/issues](https://shields.io/github/issues/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/issues)
+[![github/issues-closed](https://shields.io/github/issues-closed/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/issues?q=is%3Aissue+is%3Aclosed)
+[![github/issues-pr](https://shields.io/github/issues-pr/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/pulls)
+[![github/issues-pr-closed](https://shields.io/github/issues-pr-closed/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/pulls?q=is%3Apr+is%3Aclosed)
+[![github/discussions](https://shields.io/github/discussions/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/discussions)
+[![github/milestones](https://shields.io/github/milestones/all/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/milestones)
+[![github/forks](https://shields.io/github/forks/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/network/members)
+[![github/stars](https://shields.io/github/stars/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/watchers)
+[![github/watchers](https://shields.io/github/watchers/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/stargazers)
+[![github/contributors](https://shields.io/github/contributors/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/graphs/contributors)
+[![github/commit-activity](https://shields.io/github/commit-activity/w/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/graphs/commit-activity)
+[![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/commits)
+[![github/release-date](https://shields.io/github/release-date/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/releases/latest)
+
+![github/languages](https://shields.io/github/languages/count/Freed-Wu/computer-graphics-homework)
+![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/computer-graphics-homework)
+![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/computer-graphics-homework)
+![github/code-size](https://shields.io/github/languages/code-size/Freed-Wu/computer-graphics-homework)
+![github/repo-size](https://shields.io/github/repo-size/Freed-Wu/computer-graphics-homework)
+![github/v](https://shields.io/github/v/release/Freed-Wu/computer-graphics-homework)
+
+[![pypi/downloads](https://shields.io/pypi/dd/computer-graphics-demo)](https://pypi.org/project/computer-graphics-demo/0.0.2/#files)
+[![pypi/v](https://shields.io/pypi/v/computer-graphics-demo)](https://pypi.org/project/computer-graphics-demo)
+![pypi/format](https://shields.io/pypi/format/computer-graphics-demo)
+![pypi/status](https://shields.io/pypi/status/computer-graphics-demo)
+![pypi/implementation](https://shields.io/pypi/implementation/computer-graphics-demo)
+![pypi/pyversions](https://shields.io/pypi/pyversions/computer-graphics-demo)
 
 ## 三次书面作业
 
@@ -16,8 +50,6 @@ institute: USTC
 ## 一份编程作业
 
 30 分；算法任选，不可调用已有函数（画点函数除外），提交可执行程序和实验报告。
-
-文档见 <https://computer-graphics-demo.readthedocs.io> 。
 
 ```shell
 $ pip install computer-graphics-demo
