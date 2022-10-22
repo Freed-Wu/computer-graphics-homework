@@ -1,4 +1,4 @@
 #!/usr/bin/env -S pip install -r
--rrequirements.txt
+-r../requirements.txt
 build
 get_version
