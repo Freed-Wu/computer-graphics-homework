@@ -5,8 +5,7 @@ author: Wu Zhenyu (SA21006096)
 institute: USTC
 ---
 
-[![github/license](https://shields.io/github/license/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/blob/master/LICENSE)
-[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/computer-graphics-homework/Upload%20Python%20Package)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
+[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/computer-graphics-homework/python)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
 [![readthedocs](https://shields.io/readthedocs/computer-graphics-demo)](https://computer-graphics-demo.readthedocs.io)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/computer-graphics-homework/total)](https://github.com/Freed-Wu/computer-graphics-homework/releases)
@@ -25,6 +24,7 @@ institute: USTC
 [![github/last-commit](https://shields.io/github/last-commit/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/commits)
 [![github/release-date](https://shields.io/github/release-date/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/releases/latest)
 
+[![github/license](https://shields.io/github/license/Freed-Wu/computer-graphics-homework)](https://github.com/Freed-Wu/computer-graphics-homework/blob/master/LICENSE)
 ![github/languages](https://shields.io/github/languages/count/Freed-Wu/computer-graphics-homework)
 ![github/languages/top](https://shields.io/github/languages/top/Freed-Wu/computer-graphics-homework)
 ![github/directory-file-count](https://shields.io/github/directory-file-count/Freed-Wu/computer-graphics-homework)
