@@ -13,6 +13,8 @@ repos:
       - id: end-of-file-fixer
       - id: detect-private-key
       - id: check-symlinks
+      - id: check-ast
+      - id: debug-statements
       - id: requirements-txt-fixer
       - id: check-xml
       - id: check-yaml
@@ -23,14 +25,17 @@ repos:
     hooks:
       - id: remove-crlf
   - repo: https://github.com/codespell-project/codespell
-    rev: v2.2.1
+    rev: v2.2.2
     hooks:
       - id: codespell
+        additional_dependencies:
+          - tomli
   - repo: https://github.com/jorisroovers/gitlint
     rev: v0.17.0
     hooks:
       - id: gitlint
-        args: [--ignore=body-is-missing, --msg-filename]
+        args:
+          - --msg-filename
   - repo: https://github.com/editorconfig-checker/editorconfig-checker.python
     rev: 2.6.1
     hooks:
@@ -43,7 +48,8 @@ repos:
     rev: 0.7.16
     hooks:
       - id: mdformat
-        args: [--number]
+        args:
+          - --number
         additional_dependencies:
           - mdformat-gfm
           - mdformat-myst
