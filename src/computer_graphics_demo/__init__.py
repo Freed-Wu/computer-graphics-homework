@@ -1,3 +1,4 @@
+# noqa: D400 D205
 """
 computer_graphics_demo
 ======================
@@ -7,7 +8,16 @@ Common functions.
 import taichi as ti
 from typing import Final
 
-__version__: Final = "0.0.2"
+try:
+    from get_version import get_version, NoVersionFound
+
+    try:
+        __version__ = get_version(__file__)
+    except NoVersionFound:
+        __version__ = "0.0.0"
+except ImportError:
+    __version__ = "0.0.0"
+
 _binname: Final = "cgdemo"
 pixels = ti.Vector.field(3, float)
 

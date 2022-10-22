@@ -25,7 +25,17 @@ try:
 except FileNotFoundError:
     install_requires = []
 # NOT from computer_graphics_demo import anything to avoid adding dependencies
-VERSION: Final = "0.0.2"
+try:
+    from get_version import get_version, NoVersionFound
+
+    try:
+        __version__ = get_version(__file__)
+    except NoVersionFound:
+        __version__ = "0.0.0"
+except ImportError:
+    __version__ = "0.0.0"
+
+VERSION: Final = __version__
 BINNAME: Final = "cgdemo"
 NAME_: Final = "computer_graphics_demo"
 NAME: Final = NAME_.replace("_", "-")
