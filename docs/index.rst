@@ -11,7 +11,10 @@ Computer-graphics-demo's Documentation
    :caption: Contents:
    :glob:
 
-   *.md
+   README.md
+   1.md
+   2.md
+   3.md
    api
 
 Indices and tables
