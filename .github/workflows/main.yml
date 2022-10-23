@@ -9,6 +9,7 @@ on:
       - "**.md"
 
 env:
+  path: dist/*
   python-version: 3.9
   cache: pip
 
@@ -56,11 +57,16 @@ jobs:
       - name: Build
         run: |
           python -m build
+      - uses: actions/upload-artifact@v3
+        if: ${{ ! startsWith(github.ref, 'refs/tags/') }}
+        with:
+          path: |
+            ${{ env.path }}
       - uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
           files: |
-            dist/*
+            ${{ env.path }}
       - uses: pypa/gh-action-pypi-publish@release/v1
         if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
         with:
