@@ -27,6 +27,7 @@ Path(readme.name).write_text(
 project = "computer-graphics-demo"
 copyright = "2022, Wu Zhenyu"
 author = "Wu Zhenyu"
+language = "zh_CN"
 
 # The full version, including alpha/beta/rc tags
 release = __version__

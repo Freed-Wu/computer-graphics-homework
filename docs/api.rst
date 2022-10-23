@@ -5,6 +5,9 @@ API
 .. automodule:: computer_graphics_demo
    :members:
 
+.. automodule:: computer_graphics_demo.utils
+   :members:
+
 .. automodule:: computer_graphics_demo.line
    :members:
 
