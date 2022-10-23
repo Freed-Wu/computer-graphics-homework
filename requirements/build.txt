@@ -1,5 +1,0 @@
-#!/usr/bin/env -S pip install -r
--r../requirements.txt
-build
-get_version
-packaging
