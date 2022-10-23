@@ -8,6 +8,7 @@ build:
     python: "3.9"
   jobs:
     pre_build:
+      - pip install -e '.[dev]'
       - pip install build
       - python -m build
 

@@ -39,7 +39,7 @@ release = __version__
 # ones.
 extensions = [
     "sphinx.ext.autodoc",
-    "recommonmark",
+    "myst_parser",
 ]
 
 # Add any paths that contain templates here, relative to this directory.
