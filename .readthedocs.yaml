@@ -6,9 +6,10 @@ build:
   os: ubuntu-22.04
   tools:
     python: "3.9"
-  commands:
-    - pip install build
-    - python -m build
+  jobs:
+    pre_build:
+      - pip install build
+      - python -m build
 
 sphinx:
   configuration: docs/conf.py
