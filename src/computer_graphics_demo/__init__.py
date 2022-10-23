@@ -1,4 +1,3 @@
-# noqa: D400 D205
 """
 computer_graphics_demo
 ======================
@@ -27,17 +26,14 @@ _binname: Final = "cgdemo"
 pixels = ti.Vector.field(3, float)
 
 
-def init() -> None:
-    """init.
-
-    :rtype: None
-    """
+def init():
+    """Init."""
     pass
 
 
 @ti.pyfunc
 def setpixel(x: int, y: int, R: int, G: int, B: int):
-    """setpixel.
+    """Set Pixel.
 
     :param x:
     :type x: int
