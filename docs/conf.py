@@ -11,20 +11,17 @@
 # documentation root, use os.path.abspath to make it absolute, like shown here.
 #
 import os
-import sys
 from pathlib import Path
+import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 # pyright:reportMissingImports=false
 from computer_graphics_demo import __version__ as VERSION  # noqa: E402
 
-try:
-    readme = next(iter(Path("..").glob("README*")))
-    Path(readme.name).write_text(
-        readme.read_text().replace("images/", "../images/")
-    )
-except Exception:
-    pass
+readme = next(iter(Path("..").glob("README*")))
+Path(readme.name).write_text(
+    readme.read_text().replace("images/", "../images/")
+)
 
 # -- Project information -----------------------------------------------------
 
