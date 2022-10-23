@@ -1,5 +1,6 @@
 ---
-on: # yamllint disable-line rule:truthy
+# yamllint disable-line rule:truthy
+on:
   push:
     paths-ignore:
       - "**.md"
@@ -8,7 +9,7 @@ on: # yamllint disable-line rule:truthy
       - "**.md"
 
 jobs:
-  build:
+  deploy:
     strategy:
       fail-fast: false
       matrix:
@@ -21,11 +22,11 @@ jobs:
       - uses: actions/setup-python@v4
         with:
           python-version: 3.9
+          cache: pip
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
           pip install -r requirements/build.txt
-      - name: Build package
+      - name: Build
         run: |
           python -m build
       - uses: softprops/action-gh-release@v1
@@ -33,21 +34,7 @@ jobs:
         with:
           files: |
             dist/*
-  publish:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-python@v4
-        with:
-          python-version: 3.9
-      - name: Install dependencies
-        run: |
-          pip install --upgrade pip
-          pip install -r requirements/build.txt
-      - name: Build package
-        run: |
-          python -m build
       - uses: pypa/gh-action-pypi-publish@release/v1
-        if: startsWith(github.ref, 'refs/tags/')
+        if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}

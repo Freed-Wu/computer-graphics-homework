@@ -5,8 +5,12 @@ computer_graphics_demo
 
 Common functions.
 """
-import taichi as ti
+import logging
 from typing import Final
+
+import taichi as ti
+
+logger = logging.getLogger(__name__)
 
 try:
     from get_version import get_version, NoVersionFound
@@ -16,6 +20,7 @@ try:
     except NoVersionFound:
         __version__ = "0.0.0"
 except ImportError:
+    logger.warning("Please install get_version!")
     __version__ = "0.0.0"
 
 _binname: Final = "cgdemo"

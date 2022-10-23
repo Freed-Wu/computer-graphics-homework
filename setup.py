@@ -6,10 +6,13 @@ https://packaging.python.org/guides/distributing-packages-using-setuptools/
 https://github.com/pypa/sampleproject
 """
 
-from setuptools import setup, find_packages
-from pathlib import Path
 from mimetypes import guess_type
+from pathlib import Path
 from typing import Final
+
+from get_version import get_version
+from packaging.utils import canonicalize_name
+from setuptools import find_packages, setup
 
 here = Path(__file__).parent.resolve()
 try:
@@ -25,10 +28,11 @@ try:
 except FileNotFoundError:
     install_requires = []
 # NOT from computer_graphics_demo import anything to avoid adding dependencies
-VERSION: Final = "0.0.3rc2"
+
+VERSION: Final = get_version(__file__)
 BINNAME: Final = "cgdemo"
 NAME_: Final = "computer_graphics_demo"
-NAME: Final = NAME_.replace("_", "-")
+NAME: Final = canonicalize_name(NAME_)
 VCS_URL: Final = "https://github.com/Freed-Wu/computer-graphics-homework"
 
 setup(

@@ -1,11 +1,7 @@
----
-documentclass: ctexart
-title: Last Homework for Computer Graphics
-author: Wu Zhenyu (SA21006096)
-institute: USTC
----
+# computer-graphics-homework
 
-[![github/workflow](https://shields.io/github/workflow/status/Freed-Wu/computer-graphics-homework/python)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
+[![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/computer-graphics-homework/master.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/computer-graphics-homework/master)
+[![github/workflow](https://github.com/Freed-Wu/computer-graphics-homework/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
 [![readthedocs](https://shields.io/readthedocs/computer-graphics-demo)](https://computer-graphics-demo.readthedocs.io)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/computer-graphics-homework/total)](https://github.com/Freed-Wu/computer-graphics-homework/releases)
