@@ -1,4 +1,4 @@
-#! /usr/bin/env python3
+#! /usr/bin/env python
 # Docstring {{{ #
 """Computer graphics algorithms demonstration.
 
@@ -68,20 +68,28 @@ argument:
     julia       scale,iteration_max
     fern        scale,iteration_max,x0,y0
     reality     sample_number,r_aperture
+
+Report bugs to <wuzy01@qq.com>.
 """
 # }}} Docs #
 from typing import Optional, Dict, Union, Final
 from pprint import pformat
 import logging
 from docopt import docopt
-from . import __version__ as VERSION, _binname as BINNAME
+from . import __version__, _binname as BINNAME
 
-_doc: Final = __doc__.format(binname=BINNAME)  # type: ignore
+VERSION: Final = """{version}
+Copyright (C) 2022
+Written by Wu Zhenyu
+""".format(
+    version=__version__
+)
+DOC: Final = __doc__.format(binname=BINNAME)  # type: ignore
 Arg = Optional[Union[bool, int, str]]
 logger = logging.getLogger(__name__)
 
 
-def main(doc: str = _doc):
+def main(doc: str = DOC):
     """Run main function."""
     try:
         args: Dict[str, Arg] = docopt(doc, version=VERSION)
@@ -127,7 +135,7 @@ def main(doc: str = _doc):
 
     # pixels and paint must be defined in a same file
     if args["<command>"] in ["line"]:
-        from . import init, pixels
+        from .utils import init, pixels
 
         if args["--second"]:
             from .line.bresenham import paint
@@ -135,7 +143,7 @@ def main(doc: str = _doc):
             from .line.midpoint import paint
         argv = argv if argv else [100, 5, 3, 3]
     elif args["<command>"] in ["circle"]:
-        from . import init, pixels
+        from .utils import init, pixels
 
         if args["--second"]:
             from .circle.bresenham import paint
@@ -143,12 +151,12 @@ def main(doc: str = _doc):
             from .circle.midpoint import paint
         argv = argv if argv else [100, 50, 25]
     elif args["<command>"] in ["ellipse"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .ellipse import paint
 
         argv = argv if argv else [100, 50, 30, 10]
     elif args["<command>"] in ["fill"]:
-        from . import init, pixels
+        from .utils import init, pixels
 
         if args["--second"]:
             from .fill.seed import paint
@@ -160,12 +168,12 @@ def main(doc: str = _doc):
             argv = argv if argv else [0, 0, 100, 50, 50, 30, 25, 100]
 
     elif args["<command>"] in ["bezier"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .bezier import paint
 
         argv = argv if argv else [100, 0, 0, 30, 300, 300, 300]
     elif args["<command>"] in ["b"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .b import paint
 
         argv = (
@@ -192,27 +200,27 @@ def main(doc: str = _doc):
             ]
         )
     elif args["<command>"] in ["koch"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .koch import paint
 
         argv = argv if argv else [4, 5, 0, 0]
     elif args["<command>"] in ["mandelbrot"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .mandelbrot import paint
 
         argv = argv if argv else [2, 20]
     elif args["<command>"] in ["julia"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .julia import paint
 
         argv = argv if argv else [2, 20]
     elif args["<command>"] in ["fern"]:
-        from . import init, pixels
+        from .utils import init, pixels
         from .fern import paint
 
         argv = argv if argv else [50, 2000, 512, 0]
     elif args["<command>"] in ["reality"]:
-        from . import pixels
+        from .utils import pixels
         from .reality import paint, init, spheres
 
         ti.root.dense(ti.i, 20).place(spheres)
@@ -270,5 +278,5 @@ def main(doc: str = _doc):
 
 
 if __name__ == "__main__":
-    main(_doc)
+    main()
 # ex: foldmethod=marker

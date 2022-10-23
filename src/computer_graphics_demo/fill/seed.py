@@ -6,7 +6,7 @@ Seed point algorithm.
 """
 from ..line import polygon
 from ..line.bresenham import line
-from .. import pixels, setpixel
+from ..utils import pixels, setpixel
 
 
 def paint(R: int, G: int, B: int, x_seed: int, y_seed: int, *argv: int):

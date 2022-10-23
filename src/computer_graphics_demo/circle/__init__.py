@@ -4,7 +4,7 @@ computer_graphics_demo.circle
 
 Draw a circle.
 """
-from .. import setpixel
+from ..utils import setpixel
 
 
 def set4pixel(x0, y0, x, y, R, G, B):

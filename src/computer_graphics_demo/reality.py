@@ -9,7 +9,7 @@ import numpy as np
 import math
 import random
 import itertools
-from . import pixels
+from .utils import pixels
 
 # 0: x0, 1: y0, 2: z0, 3: r, 4: type, 5: R, 6: G, 7: B
 # type = 0: diffuse reflection

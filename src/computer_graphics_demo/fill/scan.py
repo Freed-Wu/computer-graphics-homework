@@ -6,7 +6,7 @@ Scan line algorithm.
 """
 import taichi as ti
 from typing import List, Tuple, Optional
-from .. import setpixel
+from ..utils import setpixel
 from . import cycle_shift
 
 

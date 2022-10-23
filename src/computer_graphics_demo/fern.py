@@ -6,7 +6,7 @@ Draw a fern.
 """
 import taichi as ti
 import numpy as np
-from . import setpixel
+from .utils import setpixel
 from typing import List, Tuple
 
 # https://en.wikipedia.org/wiki/Barnsley_fern

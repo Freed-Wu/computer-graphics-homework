@@ -8,21 +8,41 @@ on:
     paths-ignore:
       - "**.md"
 
+env:
+  python-version: 3.9
+  cache: pip
+
 jobs:
-  deploy:
+  test:
     strategy:
       fail-fast: false
       matrix:
         runs-on:
           - ubuntu-latest
           - macos-latest
+          - windows-latest
     runs-on: ${{ matrix.runs-on }}
     steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.9
-          cache: pip
+          python-version: ${{ env.python-version }}
+          cache: ${{ env.cache }}
+      - name: Install dependencies
+        run: |
+          pip install -e '.[dev]'
+      - name: Test
+        run: |
+          pytest
+  build:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: ${{ env.python-version }}
+          cache: ${{ env.cache }}
       - name: Install dependencies
         run: |
           pip install build
@@ -35,6 +55,6 @@ jobs:
           files: |
             dist/*
       - uses: pypa/gh-action-pypi-publish@release/v1
-        if: startsWith(github.ref, 'refs/tags/') && runner.os == 'Linux'
+        if: startsWith(github.ref, 'refs/tags/')
         with:
           password: ${{ secrets.PYPI_API_TOKEN }}

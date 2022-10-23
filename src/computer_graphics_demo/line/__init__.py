@@ -5,7 +5,7 @@ computer_graphics_demo.line
 Draw a line.
 """
 from ..fill import cycle_shift
-from .. import setpixel
+from ..utils import setpixel
 from typing import Callable, Optional
 
 

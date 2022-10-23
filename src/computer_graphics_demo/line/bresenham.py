@@ -5,7 +5,7 @@ computer_graphics_demo.line.bresenham
 Bresenham algorithm.
 """
 import taichi as ti
-from .. import setpixel
+from ..utils import setpixel
 from . import polygon
 
 

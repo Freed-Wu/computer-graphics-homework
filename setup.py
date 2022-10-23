@@ -6,7 +6,9 @@ https://packaging.python.org/guides/distributing-packages-using-setuptools/
 https://github.com/pypa/sampleproject
 """
 
+from glob import glob
 from mimetypes import guess_type
+import os
 from pathlib import Path
 from typing import Final
 
@@ -27,7 +29,11 @@ try:
     install_requires = REQUIREMENTS.read_text().splitlines()
 except FileNotFoundError:
     install_requires = []
-# NOT from computer_graphics_demo import anything to avoid adding dependencies
+extras_require = {}
+for file in glob("requirements/*.txt"):
+    name = os.path.basename(file)[:-4]
+    extras_require[name] = Path(file).read_text().splitlines()
+extras_require["all"] = sum(extras_require.values(), [])
 
 VERSION: Final = get_version(__file__)
 BINNAME: Final = "cgdemo"
@@ -69,9 +75,7 @@ setup(
     include_package_data=True,
     python_requires=">=3.6",
     install_requires=install_requires,
-    extras_require={
-        "debug": ["rich"],
-    },
+    extras_require=extras_require,
     entry_points={
         "console_scripts": [
             f"{BINNAME}={NAME_}.__main__:main",
