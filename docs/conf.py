@@ -1,36 +1,35 @@
-# Configuration file for the Sphinx documentation builder.
-#
-# This file only contains a selection of the most common options. For a full
-# list see the documentation:
-# https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""Configure the Sphinx documentation builder.
 
-# -- Path setup --------------------------------------------------------------
+This file only contains a selection of the most common options. For a full
+list see the documentation:
+https://www.sphinx-doc.org/en/master/usage/configuration.html
+"""
 
-# If extensions (or modules to document with autodoc) are in another directory,
-# add these directories to sys.path here. If the directory is relative to the
-# documentation root, use os.path.abspath to make it absolute, like shown here.
-#
 import os
 from pathlib import Path
 import sys
 
 sys.path.insert(0, os.path.abspath("../src"))
 # pyright:reportMissingImports=false
-from computer_graphics_demo import __version__ as VERSION  # noqa: E402
+from computer_graphics_demo import __version__  # noqa: E402
 
+# -- Path setup --------------------------------------------------------------
+
+# If extensions (or modules to document with autodoc) are in another directory,
+# add these directories to sys.path here. If the directory is relative to the
+# documentation root, use os.path.abspath to make it absolute, like shown here.
 readme = next(iter(Path("..").glob("README*")))
 Path(readme.name).write_text(
     readme.read_text().replace("images/", "../images/")
 )
 
 # -- Project information -----------------------------------------------------
-
 project = "computer-graphics-demo"
 copyright = "2022, Wu Zhenyu"
 author = "Wu Zhenyu"
 
 # The full version, including alpha/beta/rc tags
-release = VERSION
+release = __version__
 
 
 # -- General configuration ---------------------------------------------------

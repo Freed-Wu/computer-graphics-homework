@@ -11,7 +11,7 @@ Computer-graphics-demo's Documentation
    :caption: Contents:
    :glob:
 
-   README*
+   *.md
    api
 
 Indices and tables

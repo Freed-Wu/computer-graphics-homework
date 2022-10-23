@@ -9,7 +9,6 @@ class Test:
 
     def test_help(self):
         """Test --help."""
-
         cmd = "cgdemo --help"
         args = shlex.split(cmd)
         out = subprocess.run(args, capture_output=True).stdout.decode()

@@ -50,5 +50,9 @@ cgdemo = "computer_graphics_demo.__main__:main"
 [tool.black]
 line-length = 79
 
+# https://github.com/PyCQA/pydocstyle/issues/418
+[tool.pydocstyle]
+add_ignore = "D205, D400"
+
 [tool.pyright]
 exclude = ["src"]
