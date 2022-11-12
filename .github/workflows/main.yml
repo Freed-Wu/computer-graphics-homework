@@ -1,12 +1,14 @@
 ---
-# yamllint disable-line rule:truthy
-on:
+"on":
   push:
     paths-ignore:
       - "**.md"
+      - docs/*
   pull_request:
     paths-ignore:
       - "**.md"
+      - docs/*
+  workflow_dispatch:
 
 env:
   path: dist/*
@@ -34,7 +36,8 @@ jobs:
           pip install -e '.[dev]'
       - name: Test
         run: |
-          pytest
+          pytest --cov .
+      - uses: codecov/codecov-action@v3
   build:
     needs: test
     strategy:
