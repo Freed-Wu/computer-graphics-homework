@@ -2,6 +2,7 @@
 
 [![pre-commit.ci status](https://results.pre-commit.ci/badge/github/Freed-Wu/computer-graphics-homework/master.svg)](https://results.pre-commit.ci/latest/github/Freed-Wu/computer-graphics-homework/master)
 [![github/workflow](https://github.com/Freed-Wu/computer-graphics-homework/actions/workflows/main.yml/badge.svg)](https://github.com/Freed-Wu/computer-graphics-homework/actions)
+[![FOSSA Status](https://app.fossa.com/api/projects/git%2Bgithub.com%2FFreed-Wu%2Fcomputer-graphics-homework.svg?type=shield)](https://app.fossa.com/projects/git%2Bgithub.com%2FFreed-Wu%2Fcomputer-graphics-homework)
 [![readthedocs](https://shields.io/readthedocs/computer-graphics-demo)](https://computer-graphics-demo.readthedocs.io)
 
 [![github/downloads](https://shields.io/github/downloads/Freed-Wu/computer-graphics-homework/total)](https://github.com/Freed-Wu/computer-graphics-homework/releases)

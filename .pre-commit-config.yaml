@@ -44,6 +44,11 @@ repos:
     rev: 3.0.0
     hooks:
       - id: check-mailmap
+  - repo: https://github.com/adrienverge/yamllint
+    rev: v1.28.0
+    hooks:
+      - id: yamllint
+        exclude: ^\.config/gh/config\.yml$
   - repo: https://github.com/executablebooks/mdformat
     rev: 0.7.16
     hooks:
@@ -67,12 +72,8 @@ repos:
       - id: markdownlint-cli2
         additional_dependencies:
           - markdown-it-texmath@0.9.1
-  - repo: https://github.com/PyCQA/doc8
-    rev: v1.0.0
-    hooks:
-      - id: doc8
   - repo: https://github.com/kumaraditya303/mirrors-pyright
-    rev: v1.1.270
+    rev: v1.1.278
     hooks:
       - id: pyright
   - repo: https://github.com/pycqa/pydocstyle
